@@ -1,0 +1,120 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4341CCDE-D57F-4E31-888D-88DC54449A80}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Virl.Fresk</RootNamespace>
+    <AssemblyName>fresk</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aga.Controls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=fcc90fbf924463a3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Aga.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicContour.cs" />
+    <Compile Include="BasicRegion.cs" />
+    <Compile Include="BrowserTreeModel.cs" />
+    <Compile Include="Compound\GrGroup.cs" />
+    <Compile Include="Compound\GrTso.cs" />
+    <Compile Include="ContourBase.cs" />
+    <Compile Include="DrawEventArgs.cs" />
+    <Compile Include="GrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrForm.Designer.cs">
+      <DependentUpon>GrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GrPanel.Designer.cs">
+      <DependentUpon>GrPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrUtil.cs" />
+    <Compile Include="IContour.cs" />
+    <Compile Include="IRegion.cs" />
+    <Compile Include="Primitives\GrObjBase.cs" />
+    <Compile Include="Primitives\GrSplineBase.cs" />
+    <Compile Include="Primitives\GrHermite.cs" />
+    <Compile Include="Primitives\GrLine.cs" />
+    <Compile Include="Primitives\GrPoint.cs">
+    </Compile>
+    <Compile Include="Compound\GrContour.cs" />
+    <Compile Include="Primitives\GrBesie.cs" />
+    <Compile Include="IGrObj.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GrForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GrPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RegionBase.cs" />
+    <Compile Include="Tools\BesiePlacer.cs" />
+    <Compile Include="Tools\HermitePlacer.cs" />
+    <Compile Include="Tools\ITool.cs" />
+    <Compile Include="Tools\LinePlacer.cs" />
+    <Compile Include="Tools\Pointer.cs" />
+    <Compile Include="Tools\PointPlacer.cs" />
+    <Compile Include="Transform.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
